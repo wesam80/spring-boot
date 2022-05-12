@@ -14,7 +14,9 @@ public class HelloController {
 		Date date = new Date();  
 		Timestamp ts=new Timestamp(date.getTime());  
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return formatter.format(ts) + ": Greetings from Spring Boot!";
+		String logMessage = String.format("%s: Greetings from Spring Boot!", formatter.format(ts));
+		System.out.println(logMessage);
+		return  logMessage;
 	}
 
 }
